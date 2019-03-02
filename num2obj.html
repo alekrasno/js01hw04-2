@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+    <title>xxxnum2obj</title>
+  </head> 
+  <body>
+    <script>
+		
+		var num; // Испытуемое число
+		var num2obj = function(x)	{
+			x = prompt('Введите число [0..999]');
+			//console.log(typeof(x));
+			let y = {		//Результирующий объект
+				//hundreds : 0,
+				//tens : 0,
+				//digits : 0
+			}; 
+			
+			if (x <= 999)	{
+				//y.hun = y / 100;
+				y.hun = Math.floor(x / 100);
+				y.ten = Math.floor((x - y.hun * 100) / 10);
+				y.dig = Math.floor((x - y.hun * 100 - y.ten * 10) / 1);
+			} else {
+			console.log('Число больше 999'); 
+			y = {};
+			}
+			//console.log(typeof(y));
+			console.log(x);
+			console.log(y);
+			console.log(Math.floor(y/100));
+		}
+
+// ===============================		
+				
+		num2obj();
+		
+    </script>
+  </body>
+</html> 
